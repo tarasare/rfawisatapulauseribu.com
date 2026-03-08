@@ -1,0 +1,110 @@
+# Node.js dependencies
+/node_modules
+**/node_modules
+
+# Optional npm cache folder
+.npm
+
+# Build output
+/dist
+/dist/*
+dist/
+dist/**
+
+# Vite / dev caches
+node_modules/.vite
+.vite
+.vite/*
+
+# Local env files
+.env
+.env.*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+
+# Test coverage
+coverage/
+lcov-report/
+
+# Temporary files
+*.tmp
+*.temp
+tmp/
+temp/
+
+# Lockfiles (uncomment if you *don't* want to commit lockfiles)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# Generated files (example: generated LLMS or tools output)
+apps/web/tools/*.js
+apps/web/tools/*.log
+tools/*.log
+tools/*.tmp
+
+# Dist artifact used for deployments in monorepo
+/dist/apps/web
+dist/apps/web
+
+# OS-specific and misc
+*.seed
+*.pid
+*.gz
+
+# JetBrains IDEs
+*.iml
+.idea/
+out/
+
+# Coverage & reports
+.nyc_output
+coverage/
+
+# Misc binaries
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Docker
+docker-compose.override.yml
+.docker/
+
+# Yarn v2/v3 cache
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.pnp.*
+
+# Optional: keep npm cache and build artifacts out of git
+.cache/
+.cache/*
+.build/
+
+# Temporary VS Code workspace storage
+.history/
+
+# End of file
