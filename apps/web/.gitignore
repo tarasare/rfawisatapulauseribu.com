@@ -1,0 +1,57 @@
+# Node dependencies
+node_modules/
+**/node_modules/
+
+# Local build output (app-level)
+dist/
+build/
+.out/
+
+# Vite cache
+node_modules/.vite
+.vite/
+
+# Environment files (local secrets)
+.env
+.env.local
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+*.log
+
+# Editor / IDE
+.vscode/
+.idea/
+*.sublime-*
+*.code-workspace
+
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Coverage & reports
+coverage/
+lcov-report/
+
+# Temporary / misc
+.tmp/
+.temp/
+.cache/
+*.tmp
+*.temp
+
+# Tools / generated artifacts (local generators)
+tools/
+apps/web/tools/
+
+# Optional: keep lockfiles committed (uncomment to ignore)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# End of file
