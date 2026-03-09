@@ -66,12 +66,17 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
       </div>
 
-
-
-
+      <div className="absolute top-6 left-6 z-20 hidden md:flex">
+        <div className="inline-flex items-center gap-2 rounded-md bg-white/90 text-foreground px-3 py-2 shadow">
+          <div className="h-7 w-7 rounded-full bg-foreground text-white text-xs font-bold flex items-center justify-center">
+            RFA
+          </div>
+          <span className="text-sm font-semibold">RFA group</span>
+        </div>
+      </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-6xl mx-auto px-4 pt-12 sm:pt-24 md:pt-32">
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-4 pt-4 sm:pt-24 md:pt-32">
         <div className="grid gap-10 md:grid-cols-2 md:items-center">
           <div className="order-1">
             <div className="relative overflow-hidden rounded-3xl shadow-2xl ring-1 ring-white/20">
@@ -80,7 +85,7 @@ const HeroSection = () => {
                 alt={heroImages[activeIndex].alt}
                 className="w-full h-64 sm:h-72 md:h-80 object-cover"
               />
-              <div className="absolute top-2 left-2 md:top-4 md:left-4">
+              <div className="absolute top-2 left-1/2 -translate-x-1/2 md:hidden">
                 <div className="inline-flex items-center gap-2 rounded-md bg-white/90 text-foreground px-3 py-2 shadow">
                   <div className="h-7 w-7 rounded-full bg-foreground text-white text-xs font-bold flex items-center justify-center">
                     RFA
