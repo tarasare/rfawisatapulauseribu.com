@@ -68,3 +68,13 @@
         text-wrap: balance;
     }
 }
+
+.rfa-whatsapp-button {
+    transition: transform 200ms ease, box-shadow 200ms ease, filter 200ms ease;
+}
+
+.rfa-whatsapp-button:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 16px 32px rgba(37, 211, 102, 0.35);
+    filter: brightness(1.05);
+}

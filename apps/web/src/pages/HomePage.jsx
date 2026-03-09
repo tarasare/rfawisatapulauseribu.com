@@ -5,6 +5,7 @@ import DestinationsSection from "@/components/DestinationsSection.jsx";
 import GallerySection from "@/components/GallerySection.jsx";
 import TestimonialsSection from "@/components/TestimonialsSection.jsx";
 import ContactForm from "@/components/ContactForm.jsx";
+import { FloatingWhatsApp } from "react-floating-whatsapp";
 import { Toaster } from "@/components/ui/toaster.jsx";
 
 const HomePage = () => {
@@ -27,6 +28,19 @@ const HomePage = () => {
         <GallerySection />
         <TestimonialsSection />
         <ContactForm />
+
+        <FloatingWhatsApp
+          phoneNumber="6285926048083"
+          accountName="RFA Wisata"
+          statusMessage="Balas cepat dalam 1 jam"
+          chatMessage="Halo! 👋 Ada yang bisa kami bantu untuk rencana liburan ke Pulau Seribu?"
+          placeholder="Tulis pesan..."
+          allowEsc
+          allowClickAway
+          notification
+          notificationDelay={30}
+          buttonClassName="rfa-whatsapp-button"
+        />
 
         {/* Footer */}
         <footer className="bg-foreground text-background py-12 px-4">

@@ -267,7 +267,7 @@ const ContactForm = () => {
             <Button
               type="submit"
               size="lg"
-              className="w-full bg-primary hover:bg-primary/90 text-white text-lg py-6 shadow-lg hover:shadow-xl transition-all"
+              className="w-full bg-primary text-white text-lg py-6 shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary/90 hover:shadow-2xl hover:shadow-primary/30 active:translate-y-0"
             >
               Pesan Sekarang (via WhatsApp)
             </Button>
