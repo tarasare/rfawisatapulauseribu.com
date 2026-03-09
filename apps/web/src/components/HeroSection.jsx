@@ -79,7 +79,7 @@ const HeroSection = () => {
 
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-6xl mx-auto px-4 pt-28 md:pt-32">
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-4 pt-20 sm:pt-24 md:pt-32">
         <div className="grid gap-10 md:grid-cols-2 md:items-center">
           <div className="order-1">
             <div className="overflow-hidden rounded-3xl shadow-2xl ring-1 ring-white/20">
@@ -100,7 +100,7 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
             >
-              Discover Paradise at Pulau Seribu
+              Discover The Paradise at Pulau Seribu
             </motion.h1>
 
             <motion.p

@@ -97,7 +97,7 @@ const ContactForm = () => {
       const message = `Halo, saya ingin melakukan pemesanan.\nNama: ${formData.name}\nEmail: ${formData.email}\nTelepon: ${formData.phone}\nDestinasi: ${formData.destination}\nTanggal Mulai: ${formData.startDate}\nTanggal Akhir: ${formData.endDate}`;
 
       // Generate WhatsApp URL
-      const whatsappUrl = `https://wa.me/6285926048083?text=${encodeURIComponent(message)}`;
+      const whatsappUrl = `https://wa.me/6285711697270?text=${encodeURIComponent(message)}`;
 
       // Open WhatsApp in new tab
       window.open(whatsappUrl, "_blank");
