@@ -47,29 +47,21 @@ const GallerySection = () => {
                 - No surrounding card, uses a blurred oval image behind album photos
                 - Uses precise top-1/2 centering so overlay is perfectly vertically aligned with the section title */}
             <div className="hidden lg:flex absolute right-6 top-1/2 -translate-y-1/2 z-30 items-center pointer-events-none">
-              <div className="relative w-44 h-24 flex items-center justify-end">
-                {/* blurred oval background image (clipped to oval) */}
-                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-36 h-20 rounded-full overflow-hidden">
+              <div className="relative w-32 h-40 flex items-center justify-end">
+                {/* mask image with faded edges (clear center, fading to transparent) */}
+                <div
+                  className="absolute right-0 top-1/2 -translate-y-1/2 w-28 h-40"
+                  style={{
+                    WebkitMaskImage: 'radial-gradient(ellipse at center, black 40%, transparent 70%)',
+                    maskImage: 'radial-gradient(ellipse at center, black 40%, transparent 70%)'
+                  }}
+                >
                   <img
-                    src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=1200&q=80"
-                    alt="photobook blurred"
-                    className="w-full h-full object-cover filter blur-lg scale-110 brightness-95"
+                    src="https://images.unsplash.com/photo-1528569937393-ee892b976859?auto=format&fit=crop&w=800&q=80"
+                    alt="photobook background"
+                    className="w-full h-full object-cover brightness-95"
                   />
                 </div>
-
-                {/* back (rotated) album image */}
-                <img
-                  src="https://images.unsplash.com/photo-1526178613284-8e1b60e6b9b6?auto=format&fit=crop&w=1200&q=80"
-                  alt="PhotoBook spread"
-                  className="absolute right-6 top-1/2 -translate-y-1/2 w-28 h-20 object-cover rounded-md shadow-md -rotate-6 z-10"
-                />
-
-                {/* front (cover) album image, slightly rotated and overlapping */}
-                <img
-                  src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=1200&q=80"
-                  alt="PhotoBook cover"
-                  className="absolute right-0 top-1/2 -translate-y-1/2 w-28 h-20 object-cover rounded-md shadow-lg rotate-6 z-20"
-                />
               </div>
 
               <div className="ml-3 text-right pointer-events-auto">
