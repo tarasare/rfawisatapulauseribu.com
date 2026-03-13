@@ -17,11 +17,7 @@ const galleryImages = [
   {
     url: "https://images.unsplash.com/photo-1607927807664-de371067c3ab",
     alt: "Perahu kayu tradisional di pantai yang masih asli dengan pohon palem dan langit biru",
-  },
-  {
-    url: "https://images.unsplash.com/photo-1608504412102-b9de20f1dce0",
-    alt: "Pemandangan udara pulau-pulau tropis yang dikelilingi oleh perairan laut berwarna pirus",
-  },
+  }
 ];
 
 const GallerySection = () => {

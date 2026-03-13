@@ -10,6 +10,7 @@ import {
   SelectItem,
 } from "@/components/ui/select.jsx";
 import { useToast } from "@/hooks/use-toast.js";
+import { packageTemplates } from "@/data/packageTemplates.js";
 
 const destinations = [
   "Pulau Pramuka",
@@ -20,6 +21,8 @@ const destinations = [
   "Custom/Lainnya",
 ];
 
+
+
 const ContactForm = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
@@ -27,6 +30,8 @@ const ContactForm = () => {
     email: "",
     phone: "",
     destination: "",
+    packageType: "",
+    peopleCount: "",
     startDate: "",
     endDate: "",
   });
@@ -34,11 +39,27 @@ const ContactForm = () => {
   const [errors, setErrors] = useState({});
 
   const handleChange = (field, value) => {
-    setFormData((prev) => ({ ...prev, [field]: value }));
-    if (errors[field]) {
-      setErrors((prev) => ({ ...prev, [field]: "" }));
+    setFormData((prev) => {
+      if (field === "destination") {
+        return { ...prev, destination: value, packageType: "" };
+      }
+      return { ...prev, [field]: value };
+    });
+    if (errors[field] || (field === "destination" && errors.packageType)) {
+      setErrors((prev) => ({
+        ...prev,
+        [field]: "",
+        ...(field === "destination" ? { packageType: "" } : {}),
+      }));
     }
   };
+
+  const packageOptions =
+    formData.destination === "Custom/Lainnya"
+      ? ["Custom/Lainnya"]
+      : formData.destination
+        ? packageTemplates.map((pkg) => `${formData.destination} ${pkg.label}`)
+        : [];
 
   const validateForm = () => {
     const newErrors = {};
@@ -57,6 +78,14 @@ const ContactForm = () => {
 
     if (!formData.destination) {
       newErrors.destination = "Pilih destinasi tujuan";
+    }
+
+    if (!formData.packageType) {
+      newErrors.packageType = "Pilih paket perjalanan";
+    }
+
+    if (!formData.peopleCount || Number(formData.peopleCount) < 1) {
+      newErrors.peopleCount = "Masukkan jumlah orang yang valid";
     }
 
     if (!formData.startDate) {
@@ -94,7 +123,7 @@ const ContactForm = () => {
 
     try {
       // Format message for WhatsApp
-      const message = `Halo, saya ingin melakukan pemesanan.\nNama: ${formData.name}\nEmail: ${formData.email}\nTelepon: ${formData.phone}\nDestinasi: ${formData.destination}\nTanggal Mulai: ${formData.startDate}\nTanggal Akhir: ${formData.endDate}`;
+      const message = `Halo, saya ingin melakukan pemesanan.\nNama: ${formData.name}\nEmail: ${formData.email}\nTelepon: ${formData.phone}\nDestinasi: ${formData.destination}\nPaket: ${formData.packageType}\nJumlah Orang: ${formData.peopleCount}\nTanggal Mulai: ${formData.startDate}\nTanggal Akhir: ${formData.endDate}`;
 
       // Generate WhatsApp URL
       const whatsappUrl = `https://wa.me/6285711697270?text=${encodeURIComponent(message)}`;
@@ -113,6 +142,8 @@ const ContactForm = () => {
         email: "",
         phone: "",
         destination: "",
+        packageType: "",
+        peopleCount: "",
         startDate: "",
         endDate: "",
       });
@@ -219,6 +250,61 @@ const ContactForm = () => {
                 {errors.destination && (
                   <p className="text-destructive text-sm mt-1">
                     {errors.destination}
+                  </p>
+                )}
+              </div>
+
+              <div>
+                <Label htmlFor="packageType" className="text-card-foreground">
+                  Pilihan Paket *
+                </Label>
+                <Select
+                  value={formData.packageType}
+                  onValueChange={(value) => handleChange("packageType", value)}
+                  disabled={!formData.destination}
+                >
+                  <SelectTrigger
+                    className={`mt-1 bg-background text-foreground ${errors.packageType ? "border-destructive" : ""}`}
+                  >
+                    <SelectValue placeholder="Pilih paket" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {packageOptions.length === 0 ? (
+                      <SelectItem value="__placeholder" disabled>
+                        Pilih destinasi terlebih dahulu
+                      </SelectItem>
+                    ) : (
+                      packageOptions.map((pkg) => (
+                        <SelectItem key={pkg} value={pkg}>
+                          {pkg}
+                        </SelectItem>
+                      ))
+                    )}
+                  </SelectContent>
+                </Select>
+                {errors.packageType && (
+                  <p className="text-destructive text-sm mt-1">
+                    {errors.packageType}
+                  </p>
+                )}
+              </div>
+
+              <div>
+                <Label htmlFor="peopleCount" className="text-card-foreground">
+                  Jumlah Orang *
+                </Label>
+                <Input
+                  id="peopleCount"
+                  type="number"
+                  min="1"
+                  value={formData.peopleCount}
+                  onChange={(e) => handleChange("peopleCount", e.target.value)}
+                  placeholder="Masukkan jumlah orang"
+                  className={`mt-1 bg-background text-foreground ${errors.peopleCount ? "border-destructive" : ""}`}
+                />
+                {errors.peopleCount && (
+                  <p className="text-destructive text-sm mt-1">
+                    {errors.peopleCount}
                   </p>
                 )}
               </div>

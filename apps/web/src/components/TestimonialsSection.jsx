@@ -54,6 +54,17 @@ const TestimonialsSection = () => {
           experiences with RFA Wisata
         </p>
 
+        <div className="relative w-full max-w-4xl mx-auto aspect-video overflow-hidden rounded-2xl border border-border/60 shadow-sm mb-12">
+          <iframe
+            className="absolute inset-0 h-full w-full"
+            src="https://www.youtube.com/embed/2W2SsOyh4pI"
+            title="RFA Wisata Pulau Seribu"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {testimonials.map((testimonial, index) => (
             <motion.div
