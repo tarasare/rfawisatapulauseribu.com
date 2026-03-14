@@ -35,8 +35,12 @@ const steps = [
     description: "Pilih jenis paket perjalanan yang kamu inginkan.",
   },
   {
-    title: "Pilih Plan",
-    description: "Tentukan paket Standar atau Lengkap.",
+    title: "Pilih Plan & Fasilitas",
+    description: "Tentukan paket Standar atau Lengkap serta lihat fasilitas.",
+  },
+  {
+    title: "Uraian Kegiatan",
+    description: "Lihat itinerary kegiatan selama trip.",
   },
   {
     title: "Jumlah Orang",
@@ -96,7 +100,9 @@ const DestinationDetailPage = () => {
   const canGoNext =
     (activeStep === 1 && !!selectedPackageId) ||
     (activeStep === 2 && !!selectedPlan) ||
-    (activeStep === 3 && !!selectedPeople);
+    (activeStep === 3) ||
+    (activeStep === 4 && !!selectedPeople) ||
+    (activeStep === 5);
 
   const goNext = () => {
     if (activeStep < steps.length && canGoNext) {
@@ -386,7 +392,7 @@ const DestinationDetailPage = () => {
                   )}
 
                   {activeStep === 2 && (
-                    <div className="space-y-4">
+                    <div className="space-y-6">
                       <div className="flex flex-wrap gap-2">
                         {planOptions.map((plan) => (
                           <button
@@ -394,7 +400,6 @@ const DestinationDetailPage = () => {
                             type="button"
                             onClick={() => {
                               setSelectedPlan(plan);
-                              setActiveStep(3);
                             }}
                             className={`rounded-md border px-3 py-2 text-sm font-semibold transition-all ${
                               selectedPlan === plan
@@ -412,10 +417,70 @@ const DestinationDetailPage = () => {
                           {selectedPackage?.name || "Belum dipilih"}
                         </span>
                       </p>
+
+                      <div className="prose prose-sm max-w-none text-muted-foreground">
+                        <h3 className="text-lg font-semibold text-foreground">Fasilitas Didapat – Paket Tidung 2N1D Bay Walk Mall</h3>
+                        <ul className="list-none pl-0 space-y-1">
+                          <li>✓ Transport kapal PP (kaliadem muara angke - pulau tidung)</li>
+                          <li>✓ Penginapan / homestay AC</li>
+                          <li>✓ Makan 3x</li>
+                          <li>✓ Sepeda santai</li>
+                          <li>✓ Alat snorkeling lengkap</li>
+                          <li>✓ Kapal snorkeling untuk menuju spot perairan</li>
+                          <li>✓ Pendamping snorkeling (guide laut)</li>
+                          <li>✓ Pemandu wisata (tour guide)</li>
+                          <li>✓ Barbeque</li>
+                          <li>✓ Welcome drink</li>
+                          <li>✓ Camera underwater</li>
+                          <li>✓ Banana boat (berlaku untuk paket lengkap)</li>
+                          <li>✓ Jalan-jalan ke pantai jembatan cinta</li>
+                          <li>✓ Jalan-jalan ke pantai saung cemara</li>
+                          <li>✓ Jalan-jalan ke pantai saung sunset / tanjung barat</li>
+                        </ul>
+
+                        <h4 className="font-semibold text-foreground mt-4">Keterangan:</h4>
+                        <ul className="list-disc pl-5 space-y-1">
+                          <li>Paket STANDAR: Belum termasuk banana boat</li>
+                          <li>Paket LENGKAP: Sudah termasuk banana boat</li>
+                        </ul>
+
+                        <h4 className="font-semibold text-foreground mt-4">Biaya Diluar Paket:</h4>
+                        <ul className="list-disc pl-5 space-y-1">
+                          <li>Tip guide</li>
+                          <li>Parkir sepeda saat masuk objek wisata 2,000/sepeda</li>
+                        </ul>
+                      </div>
                     </div>
                   )}
 
                   {activeStep === 3 && (
+                    <div className="space-y-4 text-muted-foreground text-sm">
+                      <h3 className="text-lg font-semibold text-foreground">Uraian Kegiatan – Paket Tidung 2N1D Bay Walk Mall</h3>
+
+                      <h4 className="font-semibold text-foreground mt-4">HARI PERTAMA</h4>
+                      <ul className="list-disc pl-5 space-y-2">
+                        <li><strong>06.00–06.30 WIB:</strong> Sudah berkumpul di pelabuhan Kaliadem Muara Angke, kapal berangkat menuju Pulau Tidung pukul 08.00 WIB.</li>
+                        <li><strong>08.00 WIB:</strong> Kapal berangkat menuju Pulau Tidung.</li>
+                        <li><strong>10.30 WIB:</strong> Tiba di pelabuhan Pulau Tidung langsung menuju homestay untuk check-in (dipandu tour guide), setelah sampai di homestay istirahat sejenak sambil menikmati welcome drink.</li>
+                        <li><strong>11.00–12.00 WIB:</strong> Makan siang.</li>
+                        <li><strong>12.00–13.00 WIB:</strong> Istirahat sejenak, menunggu waktu snorkeling tiba.</li>
+                        <li><strong>13.00–15.00 WIB:</strong> Snorkeling di perairan/laut Pulau Tidung kecil & Pulau Payung.</li>
+                        <li><strong>15.00–16.00 WIB:</strong> Mampir ke Pantai Jembatan Cinta (bermain banana boat bagi yang booking paket lengkap).</li>
+                        <li><strong>16.00–17.00 WIB:</strong> Kembali ke homestay.</li>
+                        <li><strong>17.00–18.00 WIB:</strong> Hunting sunset di Pantai Tanjung Barat.</li>
+                        <li><strong>18.00–19.00 WIB:</strong> Makan malam.</li>
+                        <li><strong>19.00–21.00 WIB:</strong> Istirahat sejenak, sambil menunggu waktu barbeque tiba.</li>
+                        <li><strong>21.00 WIB:</strong> Barbeque time s/d selesai.</li>
+                      </ul>
+
+                      <h4 className="font-semibold text-foreground mt-6">HARI KEDUA</h4>
+                      <ul className="list-disc pl-5 space-y-2">
+                        <li><strong>05.30–07.30 WIB:</strong> Hunting sunrise di pantai.</li>
+                      </ul>
+                    </div>
+                  )}
+
+                  {activeStep === 4 && (
                     <div className="space-y-4">
                       <div className="grid gap-2">
                         <label className="text-sm font-semibold text-foreground">
@@ -461,14 +526,35 @@ const DestinationDetailPage = () => {
                       </div>
 
                       {selectedPrice && (
-                        <p className="text-sm text-muted-foreground">
+                        <p className="text-sm font-semibold text-primary">
                           Harga {selectedPlan}: {selectedPrice}
                         </p>
                       )}
+
+                      <div className="overflow-x-auto rounded-lg border border-border/60">
+                        <table className="w-full text-left text-sm text-muted-foreground">
+                          <thead className="bg-muted/50 text-xs uppercase text-foreground">
+                            <tr>
+                              <th className="px-4 py-3 font-semibold">Jumlah Peserta</th>
+                              <th className="px-4 py-3 font-semibold">Paket Standar</th>
+                              <th className="px-4 py-3 font-semibold">Paket Lengkap</th>
+                            </tr>
+                          </thead>
+                          <tbody className="divide-y divide-border/60 bg-background">
+                            {computedPriceTiers.map((tier) => (
+                              <tr key={tier.label} className="hover:bg-muted/30">
+                                <td className="px-4 py-3">{tier.label}</td>
+                                <td className="px-4 py-3">{formatCurrency(tier.standar)}</td>
+                                <td className="px-4 py-3">{formatCurrency(tier.lengkap)}</td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
                     </div>
                   )}
 
-                  {activeStep === 4 && (
+                  {activeStep === 5 && (
                     <div className="space-y-4">
                       <div className="rounded-lg border border-border/60 bg-muted/30 p-4">
                         <div className="grid gap-3 sm:grid-cols-2">
