@@ -1,9 +1,9 @@
 const carouselImages = [
-  "https://images.unsplash.com/photo-1584861321580-6cef90ba57c4",
-  "https://images.unsplash.com/photo-1654023316125-0c3cbae6ed0b",
-  "https://images.unsplash.com/photo-1608504412102-b9de20f1dce0",
-  "https://images.unsplash.com/photo-1660151183106-f76cb5134fe3",
-  "https://images.unsplash.com/photo-1694435603356-2ac8edb31846",
+  "/images/photo-1584861321580-6cef90ba57c4.jpg",
+  "/images/photo-1654023316125-0c3cbae6ed0b.jpg",
+  "/images/photo-1608504412102-b9de20f1dce0.jpg",
+  "/images/photo-1660151183106-f76cb5134fe3.jpg",
+  "/images/photo-1694435603356-2ac8edb31846.jpg",
 ];
 
 const slugify = (value) =>
@@ -16,7 +16,7 @@ const slugify = (value) =>
 const destinations = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1553512313-64af79fdfe9c",
+    image: "/images/photo-1553512313-64af79fdfe9c.jpg",
     images: carouselImages,
     name: "Pulau Tidung",
     description:
@@ -40,7 +40,7 @@ const destinations = [
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1512100356356-de1b84283e18",
+    image: "/images/photo-1512100356356-de1b84283e18.jpg",
     images: carouselImages,
     name: "Pulau Pari",
     description:
@@ -64,7 +64,7 @@ const destinations = [
   },
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1696770202164-e28a61c1b52b",
+    image: "/images/photo-1696770202164-e28a61c1b52b.jpg",
     images: carouselImages,
     name: "Pulau Pramuka",
     description:
@@ -88,7 +88,7 @@ const destinations = [
   },
   {
     id: 4,
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+    image: "/images/photo-1507525428034-b723cf961d3e.jpg",
     images: carouselImages,
     name: "Pulau Harapan",
     description:
@@ -112,7 +112,7 @@ const destinations = [
   },
   {
     id: 5,
-    image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21",
+    image: "/images/photo-1500375592092-40eb2168fd21.jpg",
     images: carouselImages,
     name: "Pulau Bidadari",
     description:
@@ -136,7 +136,7 @@ const destinations = [
   },
   {
     id: 6,
-    image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
+    image: "/images/photo-1501785888041-af3ef285b470.jpg",
     images: carouselImages,
     name: "Pulau Putri",
     description:
@@ -160,7 +160,7 @@ const destinations = [
   },
   {
     id: 7,
-    image: "https://images.unsplash.com/photo-1493558103817-58b2924bce98",
+    image: "/images/photo-1493558103817-58b2924bce98.jpg",
     images: carouselImages,
     name: "Pulau Ayer",
     description: "Pulau resort dengan konsep bungalow di atas laut yang unik.",
@@ -183,7 +183,7 @@ const destinations = [
   },
   {
     id: 8,
-    image: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e",
+    image: "/images/photo-1470770841072-f978cf4d019e.jpg",
     images: carouselImages,
     name: "Pulau Sepa",
     description: "Pulau dengan pantai pasir putih panjang dan spot diving terbaik.",
@@ -196,7 +196,7 @@ const destinations = [
   },
   {
     id: 9,
-    image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+    image: "/images/photo-1500530855697-b586d89ba3ee.jpg",
     images: carouselImages,
     name: "Pulau Pantara",
     description:
@@ -210,7 +210,7 @@ const destinations = [
   },
   {
     id: 10,
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+    image: "/images/photo-1507525428034-b723cf961d3e.jpg",
     images: carouselImages,
     name: "Pulau Macan",
     description: "Eco resort eksklusif dengan konsep ramah lingkungan dan privat.",
@@ -223,7 +223,7 @@ const destinations = [
   },
   {
     id: 11,
-    image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
+    image: "/images/photo-1501785888041-af3ef285b470.jpg",
     images: carouselImages,
     name: "Custom Tours",
     description: "Paket wisata custom sesuai kebutuhan perjalanan Anda.",

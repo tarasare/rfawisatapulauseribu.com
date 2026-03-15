@@ -3,15 +3,15 @@ import ImageLightbox from "./ImageLightbox.jsx";
 
 const galleryImages = [
   {
-    url: "https://images.unsplash.com/photo-1600688222644-2222724d8373",
+    url: "/images/photo-1600688222644-2222724d8373.jpg",
     alt: "Beautiful beach sunset at Pulau Seribu dengan langit keemasan memantul di air yang tenang",
   },
   {
-    url: "https://images.unsplash.com/photo-1695632646657-2ca8100fd6ee",
+    url: "/images/photo-1695632646657-2ca8100fd6ee.jpg",
     alt: "Air laut berwarna pirus sebening kristal dan pantai pasir putih di surga pulau tropis",
   },
   {
-    url: "https://images.unsplash.com/photo-1628458246336-f507db339ce2",
+    url: "/images/photo-1628458246336-f507db339ce2.jpg",
     alt: "Terumbu karang yang semarak dan kehidupan laut berwarna-warni di bawah air di Pulau Seribu",
   }
 ];
@@ -57,7 +57,7 @@ const GallerySection = () => {
                   }}
                 >
                   <img
-                    src="https://images.unsplash.com/photo-1528569937393-ee892b976859?auto=format&fit=crop&w=800&q=80"
+                    src="/images/photo-1528569937393-ee892b976859.jpg"
                     alt="photobook background"
                     className="w-full h-full object-cover brightness-95"
                   />
@@ -100,7 +100,7 @@ const GallerySection = () => {
             <div className="mx-auto max-w-md p-3 bg-card border border-border/50 rounded-lg flex items-center gap-3">
               <div className="w-16 h-12 overflow-hidden rounded-sm flex-shrink-0">
                 <img
-                  src="https://images.unsplash.com/photo-1526178613284-8e1b60e6b9b6?auto=format&fit=crop&w=800&q=60"
+                  src="/images/photo-1528569937393-ee892b976859.jpg"
                   alt="Free PhotoBook"
                   className="w-full h-full object-cover"
                 />

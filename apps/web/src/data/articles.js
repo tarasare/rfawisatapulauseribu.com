@@ -6,7 +6,7 @@ const articles = [
     date: "2025-01-05",
     readingTime: "6 menit",
     image:
-      "https://images.unsplash.com/photo-1512100356356-de1b84283e18?auto=format&fit=crop&w=1600&q=80",
+      "/images/photo-1512100356356-de1b84283e18.jpg",
     description:
       "Ingin liburan pantai dekat Jakarta? Panduan wisata Pulau Pari 2H1M: biaya, snorkeling, mangrove, dan tips hemat.",
     excerpt:
@@ -57,7 +57,7 @@ const articles = [
     date: "2025-01-08",
     readingTime: "5 menit",
     image:
-      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80",
+      "/images/photo-1500530855697-b586d89ba3ee.jpg",
     description:
       "Jelajahi sejarah VOC di Pulau Onrust: reruntuhan kolonial, museum, dan makam Belanda, plus cara menuju dari Muara Kamal.",
     excerpt:
@@ -98,7 +98,7 @@ const articles = [
     date: "2025-01-12",
     readingTime: "6 menit",
     image:
-      "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1600&q=80",
+      "/images/photo-1500375592092-40eb2168fd21.jpg",
     description:
       "Review Pulau Macan eco-resort: konsep ramah lingkungan, privasi tinggi, snorkeling depan kamar, dan tips booking lebih awal.",
     excerpt:
@@ -138,7 +138,7 @@ const articles = [
     date: "2025-01-15",
     readingTime: "5 menit",
     image:
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80",
+      "/images/photo-1507525428034-b723cf961d3e.jpg",
     description:
       "Cerita Jembatan Cinta Pulau Tidung, aktivitas seru, mitos lokal, hingga spot sunset terbaik untuk foto.",
     excerpt:
@@ -178,7 +178,7 @@ const articles = [
     date: "2025-01-18",
     readingTime: "5 menit",
     image:
-      "https://images.unsplash.com/photo-1553512313-64af79fdfe9c?auto=format&fit=crop&w=1600&q=80",
+      "/images/photo-1553512313-64af79fdfe9c.jpg",
     description:
       "Panduan wisata edukasi Pulau Pramuka: konservasi penyu sisik, fasilitas umum, dan aktivitas keluarga.",
     excerpt:
@@ -224,7 +224,7 @@ const articles = [
     date: "2025-01-22",
     readingTime: "5 menit",
     image:
-      "https://images.unsplash.com/photo-1608504412102-b9de20f1dce0?auto=format&fit=crop&w=1600&q=80",
+      "/images/photo-1608504412102-b9de20f1dce0.jpg",
     description:
       "Spot snorkeling Pulau Harapan terbaik, visibilitas air, tips kamera underwater, dan rekomendasi pulau sekitar.",
     excerpt:
@@ -270,7 +270,7 @@ const articles = [
     date: "2025-01-25",
     readingTime: "4 menit",
     image:
-      "https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=1600&q=80",
+      "/images/photo-1493558103817-58b2924bce98.jpg",
     description:
       "Checklist barang wajib liburan ke Kepulauan Seribu: sunblock, dry bag, obat mabuk, powerbank, dan uang tunai.",
     excerpt:
@@ -312,7 +312,7 @@ const articles = [
     date: "2025-01-28",
     readingTime: "5 menit",
     image:
-      "https://images.unsplash.com/photo-1694435603356-2ac8edb31846?auto=format&fit=crop&w=1600&q=80",
+      "/images/photo-1694435603356-2ac8edb31846.jpg",
     description:
       "Kuliner khas Kepulauan Seribu: sate gepuk, bom atom, sukun goreng, serta oleh-oleh kerupuk ikan terbaik.",
     excerpt:
@@ -352,7 +352,7 @@ const articles = [
     date: "2025-02-02",
     readingTime: "6 menit",
     image:
-      "https://images.unsplash.com/photo-1660151183106-f76cb5134fe3?auto=format&fit=crop&w=1600&q=80",
+      "/images/photo-1660151183106-f76cb5134fe3.jpg",
     description:
       "Perbandingan dermaga Marina Ancol vs Kali Adem: waktu tempuh, harga, kelebihan, dan kekurangan transportasi ke Pulau Seribu.",
     excerpt:
@@ -404,7 +404,7 @@ const articles = [
     date: "2025-02-06",
     readingTime: "5 menit",
     image:
-      "https://images.unsplash.com/photo-1584861321580-6cef90ba57c4?auto=format&fit=crop&w=1600&q=80",
+      "/images/photo-1584861321580-6cef90ba57c4.jpg",
     description:
       "Kapan waktu terbaik ke Pulau Seribu? Musim kemarau April-September vs angin barat Des-Feb, plus tips cek cuaca BMKG.",
     excerpt:

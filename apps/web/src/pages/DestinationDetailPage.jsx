@@ -65,6 +65,11 @@ const DestinationDetailPage = () => {
   const [selectedPlan, setSelectedPlan] = useState("Paket Standar");
   const [selectedPeople, setSelectedPeople] = useState("");
   const [activeStep, setActiveStep] = useState(1);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
 
   useEffect(() => {
     setCurrentImageIndex(0);
@@ -73,6 +78,11 @@ const DestinationDetailPage = () => {
     setSelectedPlan("Paket Standar");
     setSelectedPeople("");
     setActiveStep(1);
+    setName("");
+    setEmail("");
+    setPhone("");
+    setStartDate("");
+    setEndDate("");
   }, [slug]);
 
   const clampPeople = (value) => Math.min(maxPeople, Math.max(minPeople, value));
@@ -155,9 +165,22 @@ const DestinationDetailPage = () => {
     return formatCurrency(raw);
   }, [selectedTier, selectedPlan]);
 
+  const isEmailValid = email === "" || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  const isPhoneValid = phone === "" || /^[0-9+\-\s()]{9,16}$/.test(phone);
+
+  const canOrder =
+    !!selectedPeople &&
+    !!name &&
+    !!email &&
+    isEmailValid &&
+    !!phone &&
+    isPhoneValid &&
+    !!startDate &&
+    !!endDate;
+
   const handleOrderNow = () => {
     if (!destination || !selectedPackage || !selectedPeople) return;
-    const message = `Halo, saya ingin pesan paket ${selectedPackage.name} untuk ${destination.name}. Paket: ${selectedPlan}. Jumlah peserta: ${selectedPeople} orang. Harga: ${selectedPrice || "Konfirmasi admin"}.`;
+    const message = `Halo, saya ingin melakukan pemesanan.\nNama: ${name}\nEmail: ${email}\nTelepon: ${phone}\nDestinasi: ${destination.name}\nPaket: ${selectedPackage.name}\nPlan: ${selectedPlan}\nJumlah Orang: ${selectedPeople}\nHarga: ${selectedPrice || "Konfirmasi admin"}\nTanggal Mulai: ${startDate}\nTanggal Akhir: ${endDate}`;
     const whatsappUrl = `https://wa.me/6285711697270?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
   };
@@ -419,7 +442,7 @@ const DestinationDetailPage = () => {
                       </p>
 
                       <div className="prose prose-sm max-w-none text-muted-foreground">
-                        <h3 className="text-lg font-semibold text-foreground">Fasilitas Didapat – Paket Tidung 2N1D Bay Walk Mall</h3>
+                        <h3 className="text-lg font-semibold text-foreground">Fasilitas Didapat - Paket Tidung 2N1D Bay Walk Mall</h3>
                         <ul className="list-none pl-0 space-y-1">
                           <li>✓ Transport kapal PP (kaliadem muara angke - pulau tidung)</li>
                           <li>✓ Penginapan / homestay AC</li>
@@ -455,27 +478,27 @@ const DestinationDetailPage = () => {
 
                   {activeStep === 3 && (
                     <div className="space-y-4 text-muted-foreground text-sm">
-                      <h3 className="text-lg font-semibold text-foreground">Uraian Kegiatan – Paket Tidung 2N1D Bay Walk Mall</h3>
+                      <h3 className="text-lg font-semibold text-foreground">Uraian Kegiatan - Paket Tidung 2N1D Bay Walk Mall</h3>
 
                       <h4 className="font-semibold text-foreground mt-4">HARI PERTAMA</h4>
                       <ul className="list-disc pl-5 space-y-2">
-                        <li><strong>06.00–06.30 WIB:</strong> Sudah berkumpul di pelabuhan Kaliadem Muara Angke, kapal berangkat menuju Pulau Tidung pukul 08.00 WIB.</li>
+                        <li><strong>06.00-06.30 WIB:</strong> Sudah berkumpul di pelabuhan Kaliadem Muara Angke, kapal berangkat menuju Pulau Tidung pukul 08.00 WIB.</li>
                         <li><strong>08.00 WIB:</strong> Kapal berangkat menuju Pulau Tidung.</li>
                         <li><strong>10.30 WIB:</strong> Tiba di pelabuhan Pulau Tidung langsung menuju homestay untuk check-in (dipandu tour guide), setelah sampai di homestay istirahat sejenak sambil menikmati welcome drink.</li>
-                        <li><strong>11.00–12.00 WIB:</strong> Makan siang.</li>
-                        <li><strong>12.00–13.00 WIB:</strong> Istirahat sejenak, menunggu waktu snorkeling tiba.</li>
-                        <li><strong>13.00–15.00 WIB:</strong> Snorkeling di perairan/laut Pulau Tidung kecil & Pulau Payung.</li>
-                        <li><strong>15.00–16.00 WIB:</strong> Mampir ke Pantai Jembatan Cinta (bermain banana boat bagi yang booking paket lengkap).</li>
-                        <li><strong>16.00–17.00 WIB:</strong> Kembali ke homestay.</li>
-                        <li><strong>17.00–18.00 WIB:</strong> Hunting sunset di Pantai Tanjung Barat.</li>
-                        <li><strong>18.00–19.00 WIB:</strong> Makan malam.</li>
-                        <li><strong>19.00–21.00 WIB:</strong> Istirahat sejenak, sambil menunggu waktu barbeque tiba.</li>
+                        <li><strong>11.00-12.00 WIB:</strong> Makan siang.</li>
+                        <li><strong>12.00-13.00 WIB:</strong> Istirahat sejenak, menunggu waktu snorkeling tiba.</li>
+                        <li><strong>13.00-15.00 WIB:</strong> Snorkeling di perairan/laut Pulau Tidung kecil & Pulau Payung.</li>
+                        <li><strong>15.00-16.00 WIB:</strong> Mampir ke Pantai Jembatan Cinta (bermain banana boat bagi yang booking paket lengkap).</li>
+                        <li><strong>16.00-17.00 WIB:</strong> Kembali ke homestay.</li>
+                        <li><strong>17.00-18.00 WIB:</strong> Hunting sunset di Pantai Tanjung Barat.</li>
+                        <li><strong>18.00-19.00 WIB:</strong> Makan malam.</li>
+                        <li><strong>19.00-21.00 WIB:</strong> Istirahat sejenak, sambil menunggu waktu barbeque tiba.</li>
                         <li><strong>21.00 WIB:</strong> Barbeque time s/d selesai.</li>
                       </ul>
 
                       <h4 className="font-semibold text-foreground mt-6">HARI KEDUA</h4>
                       <ul className="list-disc pl-5 space-y-2">
-                        <li><strong>05.30–07.30 WIB:</strong> Hunting sunrise di pantai.</li>
+                        <li><strong>05.30-07.30 WIB:</strong> Hunting sunrise di pantai.</li>
                       </ul>
                     </div>
                   )}
@@ -593,10 +616,37 @@ const DestinationDetailPage = () => {
                         </div>
                       </div>
 
+                      <div className="grid gap-3 sm:grid-cols-2">
+                        <div>
+                          <label className="text-sm font-semibold text-foreground">Nama *</label>
+                          <input type="text" value={name} onChange={(e) => setName(e.target.value)} className="w-full mt-1 rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary" required />
+                        </div>
+                        <div>
+                          <label className="text-sm font-semibold text-foreground">Email *</label>
+                          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className={`w-full mt-1 rounded-md border bg-background px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary ${!isEmailValid ? 'border-destructive' : 'border-input'}`} required />
+                          {!isEmailValid && <p className="text-xs text-destructive mt-1">Format email tidak valid</p>}
+                        </div>
+                        <div>
+                          <label className="text-sm font-semibold text-foreground">Telepon *</label>
+                          <input type="text" value={phone} onChange={(e) => setPhone(e.target.value)} className={`w-full mt-1 rounded-md border bg-background px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary ${!isPhoneValid ? 'border-destructive' : 'border-input'}`} required />
+                          {!isPhoneValid && <p className="text-xs text-destructive mt-1">Gunakan 9-16 digit angka</p>}
+                        </div>
+                        <div className="sm:col-span-2 grid gap-3 sm:grid-cols-2">
+                          <div>
+                            <label className="text-sm font-semibold text-foreground">Tanggal Mulai *</label>
+                            <input type="date" value={startDate} onChange={(e) => setStartDate(e.target.value)} className="w-full mt-1 rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary" required />
+                          </div>
+                          <div>
+                            <label className="text-sm font-semibold text-foreground">Tanggal Akhir *</label>
+                            <input type="date" value={endDate} onChange={(e) => setEndDate(e.target.value)} className="w-full mt-1 rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary" required />
+                          </div>
+                        </div>
+                      </div>
+
                       <Button
                         className="bg-primary hover:bg-primary/90 text-white w-full sm:w-auto"
                         onClick={handleOrderNow}
-                        disabled={!selectedPeople}
+                        disabled={!canOrder}
                       >
                         Order Now
                       </Button>

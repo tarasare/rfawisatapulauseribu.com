@@ -1,7 +1,7 @@
 import React from "react";
 import { FloatingWhatsApp } from "react-floating-whatsapp";
 
-const avatarUrl = new URL("../../assets/profile/wa.png", import.meta.url).href;
+const avatarUrl = "/assets/profile/wa.png";
 
 const FloatingWhatsappWidget = () => {
   return (

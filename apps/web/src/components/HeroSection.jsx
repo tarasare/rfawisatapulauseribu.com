@@ -4,27 +4,27 @@ import { Button } from "@/components/ui/button.jsx";
 
 const heroImages = [
   {
-    src: new URL("../../assets/hero_slider/slide_1.jpeg", import.meta.url).href,
+    src: "/assets/hero_slider/slide_1.jpeg",
     alt: "Hero slider 1",
   },
   {
-    src: new URL("../../assets/hero_slider/slide_2.jpeg", import.meta.url).href,
+    src: "/assets/hero_slider/slide_2.jpeg",
     alt: "Hero slider 2",
   },
   {
-    src: new URL("../../assets/hero_slider/slide_3.jpeg", import.meta.url).href,
+    src: "/assets/hero_slider/slide_3.jpeg",
     alt: "Hero slider 3",
   },
   {
-    src: new URL("../../assets/hero_slider/slide_4.jpeg", import.meta.url).href,
+    src: "/assets/hero_slider/slide_4.jpeg",
     alt: "Hero slider 4",
   },
   {
-    src: new URL("../../assets/hero_slider/slide_5.jpeg", import.meta.url).href,
+    src: "/assets/hero_slider/slide_5.jpeg",
     alt: "Hero slider 5",
   },
   {
-    src: new URL("../../assets/hero_slider/slide_6.jpeg", import.meta.url).href,
+    src: "/assets/hero_slider/slide_6.jpeg",
     alt: "Hero slider 6",
   },
 ];
