@@ -2,6 +2,7 @@ import { writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { destinations } from "../src/data/destinations.js";
+import { articles } from "../src/data/articles.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -24,7 +25,9 @@ const buildSitemap = () => {
   const urls = [
     "/",
     "/destinations",
+    "/articles",
     ...destinations.map((dest) => `/destinations/${dest.slug}`),
+    ...articles.map((article) => `/articles/${article.slug}`),
   ];
 
   const urlEntries = urls
