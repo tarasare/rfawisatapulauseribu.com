@@ -59,7 +59,7 @@ const ExploreDestinationsPage = () => {
                 Explore Destinations
               </h1>
               <p className="text-muted-foreground mt-2">
-                Temukan pulau favoritmu dengan filter aktivitas dan pencarian.
+                Temukan pulau favoritmu di halaman ini.
               </p>
             </div>
 
