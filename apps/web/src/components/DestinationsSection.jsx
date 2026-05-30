@@ -6,7 +6,11 @@ import { Check } from "lucide-react";
 import { destinations } from "@/data/destinations.js";
 
 const DestinationsSection = () => {
-  const featuredDestinations = destinations.slice(0, 3);
+  const featuredDestinations = [
+                                destinations[0],
+                                destinations[3],
+                                destinations[1]
+                                ];
 
   return (
     <section className="pt-28 pb-20 px-4 bg-background sm:pt-24 md:pt-20">
