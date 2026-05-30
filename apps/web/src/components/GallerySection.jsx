@@ -71,6 +71,24 @@ const GallerySection = () => {
             </div>
           </div>
 
+          
+          {/* For small screens show a subtle inline promo above the gallery */}
+          <div className="lg:hidden mt-6">
+            <div className="mx-auto max-w-md p-3 bg-card border border-border/50 rounded-lg flex items-center gap-3">
+              <div className="w-16 h-12 overflow-hidden rounded-sm flex-shrink-0">
+                <img
+                  src="/images/photo-1528569937393-ee892b976859.jpg"
+                  alt="Free PhotoBook"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="text-sm">
+                <div className="font-semibold text-foreground">Free PhotoBook</div>
+                <div className="text-xs text-muted-foreground">(untuk setiap peserta)</div>
+              </div>
+            </div>
+          </div>
+
           {/* Gallery grid (full width); overlay above will sit to the right of the title */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {galleryImages.map((image, index) => (
@@ -95,22 +113,6 @@ const GallerySection = () => {
             ))}
           </div>
 
-          {/* For small screens show a subtle inline promo above the gallery */}
-          <div className="lg:hidden mt-6">
-            <div className="mx-auto max-w-md p-3 bg-card border border-border/50 rounded-lg flex items-center gap-3">
-              <div className="w-16 h-12 overflow-hidden rounded-sm flex-shrink-0">
-                <img
-                  src="/images/photo-1528569937393-ee892b976859.jpg"
-                  alt="Free PhotoBook"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="text-sm">
-                <div className="font-semibold text-foreground">Free PhotoBook</div>
-                <div className="text-xs text-muted-foreground">(untuk setiap peserta)</div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
